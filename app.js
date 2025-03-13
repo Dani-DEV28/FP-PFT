@@ -17,7 +17,21 @@ app.post('/', (req, res) => {
 });
 
 app.post('/summary', (req, res) => {
-    res.render('summary');
+    const {
+        workout,
+        duration,
+        intensity,
+        date,
+        notes
+    } = req.body;
+
+    console.log(workout);
+    console.log(duration);
+    console.log(intensity);
+    console.log(date);
+    console.log(notes);
+
+    res.render('summary', { workout, duration, intensity, date, notes});
 });
 
 app.listen(PORT, () => {

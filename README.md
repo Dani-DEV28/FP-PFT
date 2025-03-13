@@ -13,5 +13,7 @@ npm install ejs
 
 - Setting input types; number, text, date, radio
 - other input tags: textarea, select/option
-# NOTE
+### NOTE
 - input typically require some value assigned
+
+## Styling NOTES
