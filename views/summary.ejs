@@ -8,16 +8,23 @@
 </head>
 <body>
     <div id = header>
-        <h2>Logged Workout</h2>
+        <h2>Workout Summary</h2>
     </div>
 
     <div>
         <form action="" method="post">
-            <p>Workout Type: <%= workout %></p>
-            <p>Duration: <%= duration %> minutes</p>
-            <p>Intensity Level: <%= intensity %></p>
-            <p>Date: <%= date %></p>
-            <p>Notes: <%= notes %></p>
+            <h2>Logged Workouts</h2>
+            
+            <% for (let i = 0; i < WS_LOGS.length; i++) { %>
+                <div class="workout-entry">
+                    <p>Workout Type: <%= WS_LOGS[i].workout %></p>
+                    <p>Duration: <%= WS_LOGS[i].duration %> minutes</p>
+                    <p>Intensity Level: <%= WS_LOGS[i].intensity %></p>
+                    <p>Date: <%= WS_LOGS[i].date %></p>
+                    <p>Notes: <%= WS_LOGS[i].notes%></p>
+                    <hr>
+                </div>
+            <% }; %>
         </form>
     </div>
 </body>

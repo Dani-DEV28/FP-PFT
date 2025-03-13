@@ -31,7 +31,19 @@ app.post('/summary', (req, res) => {
     console.log(date);
     console.log(notes);
 
-    res.render('summary', { workout, duration, intensity, date, notes});
+    const workoutLog = {
+        workout: workout,
+        duration:duration,
+        intensity: intensity,
+        date: date,
+        notes: notes
+    };
+
+    WS_LOGS.push(workoutLog);
+
+    console.log(WS_LOGS);
+
+    res.render('summary', { WS_LOGS });
 });
 
 app.listen(PORT, () => {
